@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from ht03app.views import index
+from django.conf.urls.static import static
+from django.conf import settings
+from ht04app.views import index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', index),  # базовый адрес всего проекта gbhtproject
+    path('', index, name='index'),  # базовый адрес всего проекта gbhtproject
     path('ht01/', include('ht01app.urls')),
     path('ht02/', include('ht02app.urls')),
     path('ht03/', include('ht03app.urls')),
+    path('ht04/', include('ht04app.urls')),
 ]
+
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ht01app',
     'ht02app',
     'ht03app',
+    'ht04app',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -158,13 +163,23 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
-        'web01ex04app': {
-            'handlers': ['console', 'file'],
+        'ht01app': {
+            'handlers': ['console'],
             'level': 'DEBUG',
             'propagate': True,
         },
-        'web01ex05app': {
-            'handlers': ['console', 'file'],
+        'ht02app': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'ht03app': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'ht04app': {
+            'handlers': ['console'],
             'level': 'DEBUG',
             'propagate': True,
         },
