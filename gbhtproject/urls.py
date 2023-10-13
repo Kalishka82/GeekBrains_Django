@@ -27,6 +27,8 @@ urlpatterns = [
     path('ht02/', include('ht02app.urls')),
     path('ht03/', include('ht03app.urls')),
     path('ht04/', include('ht04app.urls')),
+    # path('__debug__/', include("debug_toolbar.urls")),
+
 ]
 
 # if settings.DEBUG:
